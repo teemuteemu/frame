@@ -13,7 +13,7 @@ window.frame = ((frame) => {
     }
     return routeStruct;
   };
-  
+
   const getRouteComponents = (fragments) => {
     let parentComponent = frame.router.routes[fragments[0]];
     fragments.shift();
@@ -39,6 +39,11 @@ window.frame = ((frame) => {
 
   const onHashChange = () => {
     const fragments = getRoute();
+    const routerProps = {
+      router: {
+        currentRoute: fragments.slice(1).join('/')
+      }
+    };
 
     const components = getRouteComponents(fragments);
     const HTMLstring = components.reduceRight((props, curr) => {
@@ -46,7 +51,7 @@ window.frame = ((frame) => {
         props.children = curr(props);
       }
       return props;
-    }, {}).children;
+    }, routerProps).children;
 
     frame.renderString(element, HTMLstring);
   };

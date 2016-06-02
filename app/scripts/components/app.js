@@ -5,7 +5,8 @@ frame.define([
   './scripts/content.js'
 ]).then(([MenuBar, contentData]) => {
   this.App = (props) => {
-    const menuBar = MenuBar(contentData);
+    const menuProps = Object.assign({}, contentData, {currentRoute: props.router.currentRoute});
+    const menuBar = MenuBar(menuProps);
 
     return `
       <div class="app">
