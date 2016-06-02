@@ -28,6 +28,6 @@
       }
     };
 
-    frame.router.defineRoutes(routes, appPlaceholder);
+    frame.router.app(routes, appPlaceholder);
   });
 })(window.frame);

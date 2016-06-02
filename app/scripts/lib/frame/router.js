@@ -39,7 +39,7 @@ window.frame = ((frame) => {
 
   const onHashChange = () => {
     const fragments = getRoute();
-    const routerProps = {
+    const initialProps = {
       router: {
         currentRoute: fragments.slice(1).join('/')
       }
@@ -51,14 +51,17 @@ window.frame = ((frame) => {
         props.children = curr(props);
       }
       return props;
-    }, routerProps).children;
+    }, initialProps).children;
 
     frame.renderString(element, HTMLstring);
   };
 
-  frame.router.defineRoutes = (newRoutes, newElement) => {
-    frame.router.routes = newRoutes;
-    element = newElement;
+  /*
+   * Public API
+   */
+  frame.router.app = (routes, placeholderElement) => {
+    frame.router.routes = routes;
+    element = placeholderElement;
 
     window.addEventListener('hashchange', onHashChange);
     onHashChange();
