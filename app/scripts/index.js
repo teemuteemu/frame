@@ -2,25 +2,10 @@
 
 (function (frame) {
   frame.define([
-    './scripts/components/app.js'
-  ]).then(([App]) => {
+    './scripts/components/App.js',
+    './scripts/content.js'
+  ]).then(([App, content]) => {
     const appPlaceholder = document.getElementById('app');
-    const appProps = {
-      title: 'Dummy app',
-      menu: [
-        {
-          title: 'Me',
-          href: 'me'
-        }, {
-          title: 'Project',
-          href: 'projects'
-        }, {
-          title: 'Contact',
-          href: 'contact'
-        }
-      ]
-    };
-
-    frame.render(appPlaceholder, App, appProps);
+    frame.render(appPlaceholder, App, content);
   });
 }(window.frame));
