@@ -47,10 +47,11 @@ window.frame = ((frame) => {
   };
 
   frame.render = (domElement, Component, props) => {
-    const placeholder = document.createElement('div');
+    domElement.innerHTML = Component(props);
+  };
 
-    placeholder.innerHTML = Component(props);
-    domElement.parentNode.replaceChild(placeholder, domElement);
+  frame.renderString = (domElement, HTMLstring) => {
+    domElement.innerHTML = HTMLstring;
   };
 
   return frame;

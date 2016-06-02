@@ -2,17 +2,18 @@
 
 frame.define([
   './scripts/components/MenuBar.js',
-  './scripts/components/Content.js'
-]).then(([MenuBar, Content]) => {
+  './scripts/content.js'
+]).then(([MenuBar, contentData]) => {
   this.App = (props) => {
-    const menuBar = MenuBar(props);
-    const content = Content(props);
+    const menuBar = MenuBar(contentData);
 
     return `
       <div class="app">
-        <h1>${props.title}</h1>
         ${menuBar}
-        ${content}
+        <div class="content">
+          <h1>${contentData.title}</h1>
+          ${props.children}
+        </div>
       </div>
     `;
   };
