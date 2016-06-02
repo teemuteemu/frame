@@ -1,12 +1,10 @@
 'use strict';
 
 this.Content = ({content}) => {
-  const foo = content.me;
-
   return `
     <div class="content">
-      <h1>${foo.title}</h1>
-      <p>${foo.content}</P>
+      <h2>${content.title}</h2>
+      <p>${content.content}</P>
     </div>
   `;
 };

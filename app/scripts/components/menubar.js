@@ -3,7 +3,7 @@
 this.MenuBarItem = ({href, title}) => {
   return `
     <li>
-      <a href=${href}>${title}</a>
+      <a href="#${href}">${title}</a>
     </li>
   `;
 };

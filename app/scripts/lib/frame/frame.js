@@ -50,7 +50,7 @@ window.frame = ((frame) => {
     const placeholder = document.createElement('div');
 
     placeholder.innerHTML = Component(props);
-    domElement.appendChild(placeholder);
+    domElement.parentNode.replaceChild(placeholder, domElement);
   };
 
   return frame;

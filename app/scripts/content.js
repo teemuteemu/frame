@@ -3,13 +3,13 @@ this.content = {
   menu: [
     {
       title: 'Me',
-      href: 'me'
+      href: '',
     }, {
       title: 'Project',
-      href: 'projects'
+      href: 'projects',
     }, {
       title: 'Contact',
-      href: 'contact'
+      href: 'contact',
     }
   ],
   content: {
