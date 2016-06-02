@@ -3,25 +3,25 @@ this.content = {
   menu: [
     {
       title: 'Me',
-      href: '',
+      href: ''
     }, {
       title: 'Project',
-      href: 'projects',
+      href: 'projects'
     }, {
       title: 'Contact',
-      href: 'contact',
+      href: 'contact'
     }
   ],
   content: {
-    me: {
+    '': {
       title: 'About me',
       content: 'me me me'
     },
-    projects: {
+    'projects': {
       title: 'Projects',
       content: 'some projects here'
     },
-    contact: {
+    'contact': {
       title: 'Contact',
       content: 'contact contact me me me'
     }

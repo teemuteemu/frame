@@ -5,29 +5,19 @@
     './scripts/components/App.js',
     './scripts/content.js'
   ]).then(([App, content]) => {
-
     const renderApp = (route) => {
       const appPlaceholder = document.querySelector('.app');
-
-      const routeContent = content.content[route];
-      const selectedContent = {
-        content: routeContent
+      const routerProps = {
+        router: {
+          route
+        }
       };
-      const appProps = Object.assign({}, content, selectedContent);
+      const appProps = Object.assign({}, content, routerProps);
+      const app = App(appProps);
 
       frame.render(appPlaceholder, App, appProps);
     };
 
-    frame.router.defineRoutes({
-      '': () => {
-        renderApp('me');
-      },
-      'projects': () => {
-        renderApp('projects');
-      },
-      'contact': () => {
-        renderApp('contact');
-      }
-    });
+    frame.router.addRouteListener(renderApp);
   });
 })(window.frame);
