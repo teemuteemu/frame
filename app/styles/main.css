@@ -13,6 +13,14 @@ body {
   width: 200px;
 }
 
+.menubar-item {
+
+}
+
+.menubar-item.active {
+  background: lightsalmon;
+}
+
 .content {
   flex: 1;
 }

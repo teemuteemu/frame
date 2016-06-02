@@ -3,8 +3,11 @@
 ((frame) => {
   frame.define([
     './scripts/components/App.js',
-    './scripts/content.js'
-  ]).then(([App, content]) => {
+    './scripts/content.js',
+    './scripts/pages/Me.js',
+    './scripts/pages/Projects.js',
+    './scripts/pages/Contact.js'
+  ]).then(([App, content, MePage, ProjectsPage, ContactPage]) => {
     const appPlaceholder = document.querySelector('.app');
     const routes = {
       '/': {
@@ -13,13 +16,13 @@
           '404': () => `<p>Not found :(</p>`,
           'default': 'me',
           'me': {
-            component: () => `<p>me me me</p>`
+            component: MePage
           },
           'projects': {
-            component: () => `<p>projects</p>`
+            component: ProjectsPage
           },
           'contact': {
-            component: () => `<p>contact</p>`
+            component: ContactPage
           }
         }
       }
