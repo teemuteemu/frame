@@ -19,7 +19,12 @@
             component: MePage
           },
           'projects': {
-            component: ProjectsPage
+            component: ProjectsPage,
+            routes: {
+              'id': {
+                component: ProjectsPage
+              }
+            }
           },
           'contact': {
             component: ContactPage

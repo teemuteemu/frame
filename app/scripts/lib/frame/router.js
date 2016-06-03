@@ -26,8 +26,9 @@ window.frame = ((frame) => {
       let thisRoute = parentComponent.routes[frag];
 
       if (thisRoute && thisRoute.routes) {
-        parentComponent = parentComponent.routes;
+        parentComponent = thisRoute;
       }
+
       if (!thisRoute) {
         thisRoute = {
           component: parentComponent.routes['404']
